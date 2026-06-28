@@ -1,8 +1,10 @@
-# Publication Volume and Academic Migration (OpenAlex)
+# Citation Changes and Academic Migration (OpenAlex)
 
 This project is under active development.
 
 This project analyses whether academic migration is associated with changes in publication performance among researchers.
+
+See `/report_example.pdf` for an example of a report.
 
 ## Overview
 
