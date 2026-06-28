@@ -80,11 +80,6 @@ tbl_authors_works <- tbl_authors_works %>%
                tab_source_note(
                  source_note = "Notes: 1) International migration is by default a subset of internal migration. The groups are operationalised as mutually exclusive manually. 2) Time effects heavily influence the results, despite time normalisation.")
 
-file_path <- file.path(output, "1_descriptives.pdf")
-gtsave(tbl_authors_works, filename = file_path)
-
-# Each table is saved as a full-page A4 PDF
-
 # Average citation change within authors ----------------------------------
 
 # For internal migration
@@ -117,9 +112,6 @@ hist2 <- ggplot(data_analysis_temp, aes(x = a_diff_tn)) +
   ) +
   theme_classic(base_size = 14) +
   coord_cartesian(xlim = c(-5, 5), ylim = c(0, 1000))
-
-file_path <- file.path(output, "2_hist_cit_change_int.pdf")
-ggsave(filename = file_path, plot = hist2, width = 6, height = 4)
 
 hist2
 
@@ -154,9 +146,6 @@ hist3 <- ggplot(data_analysis_temp, aes(x = c_diff_tn)) +
   theme_classic(base_size = 14) +
   coord_cartesian(xlim = c(-5, 5), ylim = c(0, 1000))
 
-file_path <- file.path(output, "3_hist_cit_change_country.pdf")
-ggsave(filename = file_path, plot = hist3, width = 6, height = 4)
-
 # Scatterplot: time-normalised citation by work age ------------------------------------
 
 scatter <- ggplot(data_analysis, aes(x = work_age, y = year_norm_cit, color = factor(migration_type))) +
@@ -180,9 +169,6 @@ scatter <- ggplot(data_analysis, aes(x = work_age, y = year_norm_cit, color = fa
     plot.title = element_text(hjust = 0.5)
   ) +
   coord_cartesian(xlim = c(0, 75), ylim = c(0, 5))
-
-file_path <- file.path(output, "4_scatter_tn_cit.pdf")
-ggsave(filename = file_path, plot = scatter, width = 9, height = 6)
 
 # Sample size flowchart ---------------------------------------------------
 
@@ -237,8 +223,3 @@ flow_tbl <- flow_tbl %>%
   tab_header(title = "Flowtable: Evolution of the Sample Size") %>%
   tab_source_note(
     source_note = note_text)
-
-file_path <- file.path(output, "5_sample_flowchart.pdf")
-gtsave(flow_tbl, filename = file_path)
-
-# Each table is saved as a full-page A4 PDF

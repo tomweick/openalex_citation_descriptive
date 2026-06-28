@@ -163,7 +163,7 @@ data_analysis <- data_analysis %>%
   ) %>%
   ungroup()
 
-# Work-weighted differences in citation
+# differences in citation
 
 data_analysis <- data_analysis %>%
   mutate(

@@ -6,15 +6,26 @@ dist/
 wheels/
 *.egg-info
 
+/private
+
+/data/*
+
+/save
+
 # Virtual environments
 .venv
 
-renv/*
-!renv/
-!renv/activate.R
+renv/library
+renv/staging
+renv/.gitignore
+renv/settings.json
 
 .Rhistory
 
 .Rproj.user
 
 README.html
+
+/scripts/.idea
+
+report.html

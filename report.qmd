@@ -1,0 +1,93 @@
+---
+title: "Documentation: Research Performance and Migration Report"
+author: "Tom Weick"
+date: today
+format:
+  html:
+    self-contained: true
+---
+
+```{r, include=FALSE}
+
+library(here)
+
+paths_root <- ".."
+renv::load(project = paths_root)
+
+source(here::here("scripts", "3_preprocessing.R"))
+source(here::here("scripts", "4_analysis.R"))
+source(here::here("scripts", "5_visualization.R"))
+
+```
+
+# Results
+
+### Univariate
+
+```{r, echo=FALSE}
+
+hist2
+
+hist3
+
+```
+
+### Bivariate
+
+```{r, echo=FALSE}
+
+scatter
+
+```
+
+# Technical
+
+### Sample evolution
+
+```{r, echo=FALSE}
+
+flow_tbl
+
+```
+
+### Data structure
+
+```{r, echo=FALSE}
+
+glimpse(data_raw)
+
+```
+
+# Report Versioning
+
+### Report Parameters
+
+```{r, echo=FALSE}
+
+cat(paste0("Authors: ", s_4_miss_all_a, "\nWorks: ", s_4_miss_all_w))
+
+cat("Authors % of full data: ", paste0(round(100 * s_4_miss_all_a / s_1_before_a, 1), "%\nWorks % of full data: ", round(100 * s_4_miss_all_w / s_1_before_w, 1), "%"))
+
+```
+
+### Key Indicators
+
+```{r, echo=FALSE}
+
+KI1 <- "KI 2: Mean citation difference after internal migration: "
+
+cat(paste0(KI1, "\n", mean_c_diff_tn))
+
+KI1 <- "KI 1: Mean citation difference after international migration: "
+
+cat(paste0(KI1, "\n", mean_a_diff_tn))
+
+```
+
+### Internal identifier for the report Versioning
+
+```{r, echo=FALSE}
+
+# ADD
+
+```
