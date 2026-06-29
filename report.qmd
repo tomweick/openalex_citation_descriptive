@@ -76,11 +76,11 @@ cat("Authors % of full data: ", paste0(round(100 * s_4_miss_all_a / s_1_before_a
 
 KI1 <- "KI 2: Mean citation difference after internal migration: "
 
-cat(paste0(KI1, "\n", mean_c_diff_tn))
+cat(paste0(KI1, "\n", mean_a_diff_tn))
 
 KI1 <- "KI 1: Mean citation difference after international migration: "
 
-cat(paste0(KI1, "\n", mean_a_diff_tn))
+cat(paste0(KI1, "\n", mean_c_diff_tn))
 
 ```
 
